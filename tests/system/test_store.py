@@ -30,7 +30,7 @@ class StoreTest(BaseTest):
                 client.post('/store/test')
                 # or StoreModel('test').save_to_db()
                 resp = client.delete('/store/test')  # get, post, delete, put, patch
-                self.assertEqual(resp.status_code, 200)
+                self.assertEqual(resp.status_code, 201)
                 self.assertDictEqual(json.loads(resp.data), ({'message': 'Store deleted'}))
 
     def test_find_store(self):
